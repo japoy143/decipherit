@@ -13,3 +13,22 @@ export const CaesarShiftPlay = (word: string, shift: number) => {
   }
   return toTheRightText;
 };
+
+export const CaesarShiftPlayLeft = (word: string, shift: number) => {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let toTheLeftText = "";
+  for (let i = 0; i < word.length; i++) {
+    const indexOfLetter = alphabet.indexOf(word[i].toLowerCase());
+    if (indexOfLetter === -1) {
+      toTheLeftText += word[i];
+      continue;
+    }
+    let toTheLeftIndex = indexOfLetter - shift;
+    // Handle negative indices by wrapping around to the end of the alphabet
+    if (toTheLeftIndex < 0) {
+      toTheLeftIndex = alphabet.length + toTheLeftIndex;
+    }
+    toTheLeftText += alphabet[toTheLeftIndex];
+  }
+  return toTheLeftText;
+};
