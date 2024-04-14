@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Nav/Header";
 import Nav from "./components/Nav/Nav";
 import Play from "./components/Play/Play";
+import MonoalphabeticPlay from "./components/Play/Category/Monoalphabetic";
 import { Toaster } from "sonner";
 import {
   CaesarsCipher,
@@ -22,7 +23,7 @@ function App() {
       <Monoalphabetic />,
       <MonoalphabeticSection2 />,
     ],
-    [<Play />],
+    [<Play />, <MonoalphabeticPlay />],
   ];
 
   const setHome = () => {
@@ -40,7 +41,7 @@ function App() {
         <main className="grid grid-cols-5 bg-primary shadow-lg ">
           <aside className=" col-span-1 h-screen  z-10   fixed left-0  shadow-2xl py-20 ">
             <Nav
-              className=" flex flex-col   text-justify p-10 space-y-6 text-white text-xl font-medium"
+              className=" flex flex-col   text-justify p-6 space-y-6 text-white text-xl font-medium"
               setHome={() => setHome()}
               setPlay={() => setPlay()}
               numPage={num}

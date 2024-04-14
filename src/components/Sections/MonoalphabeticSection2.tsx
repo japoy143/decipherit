@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { MonoalphabeticCipher } from "../Functions/Monoalphabetic";
 import MonoalphabeticsectionSVG2 from "../SVG/monoalphabeticsection2";
+import { keys } from "../Functions/Monoalphabetic";
 function MonoalphabeticSection2() {
-  const keys = ["zyxwvutsrqponmlkjihgfedcba", "yzwxuvstqropmnklijghefcdab"];
   const [change, setChange] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
   const [output, setOutput] = useState<string>("");

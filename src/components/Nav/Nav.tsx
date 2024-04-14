@@ -24,6 +24,16 @@ function Nav({ className, setHome, setPlay, numPage }: NavProps) {
       >
         Play
       </li>
+      <li className=" text-base indent-2">
+        Ceasar
+        <br />
+        <p>Cipher</p>
+      </li>
+      <li className=" text-sm indent-2">
+        Monoalphabetic
+        <br />
+        <p>Cipher</p>
+      </li>
     </ul>
   );
 }

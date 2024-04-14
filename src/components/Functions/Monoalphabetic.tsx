@@ -1,3 +1,8 @@
+export const keys = [
+  "zyxwvutsrqponmlkjihgfedcba",
+  "yzwxuvstqropmnklijghefcdab",
+];
+
 export const MonoalphabeticCipher = (
   input: string,
   key: string,
@@ -13,4 +18,17 @@ export const MonoalphabeticCipher = (
   }
   setInput(input);
   setOutput(letter);
+};
+
+export const MonoalphabeticPlayCipher = (word: string, key: string) => {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let letter = "";
+
+  for (let i = 0; i < word.length; i++) {
+    const indexOfLetter = alphabet.lastIndexOf(word[i].toLocaleLowerCase());
+    const value = key[indexOfLetter];
+    letter += `${value}`;
+  }
+
+  return letter;
 };
